@@ -13,7 +13,7 @@ pushd ${work_dir}/plot_01/reads
 files=('SRR6942527' 'SRR6942529' 'SRR6942530' 'SRR6942531' 'SRR6942532')
 for f in ${files[@]};
 do
-  ${work_dir}/tools/sratoolkit.2.9.0-ubuntu64/bin/fastq-dump ${files}
+  ${work_dir}/tools/sratoolkit.2.9.0-ubuntu64/bin/fastq-dump ${f}
 done
 ${work_dir}/tools/sratoolkit.2.9.0-ubuntu64/bin/fastq-dump \
   -I \
@@ -26,7 +26,7 @@ pushd ${work_dir}/plot_36/reads
 files=('SRR6942476' 'SRR6942477' 'SRR6942478' 'SRR6942479' 'SRR6942480')
 for f in ${files[@]};
 do
-  ${work_dir}/tools/sratoolkit.2.9.0-ubuntu64/bin/fastq-dump ${files}
+  ${work_dir}/tools/sratoolkit.2.9.0-ubuntu64/bin/fastq-dump ${f}
 done
 ${work_dir}/tools/sratoolkit.2.9.0-ubuntu64/bin/fastq-dump \
   -I \
