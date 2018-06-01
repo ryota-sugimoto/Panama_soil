@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-[ $# == 3 ] || { echo $0 '<fastq_1> <fastq_2>'; exit 1; }
+[ $# == 2 ] || { echo $0 '<fastq_1> <fastq_2>'; exit 1; }
 [ -f ${1} ] || { echo "$1 not exist"; exit 1; }
 [ -f ${2} ] || { echo "$2 not exist"; exit 1; }
 
