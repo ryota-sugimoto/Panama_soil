@@ -38,7 +38,7 @@ merge_command=(${bbmap_dir}/bbmerge.sh
                out=${merged_fastq}
                outu=${unmerged_fastq}
                ihist=${insert_hist})
-${merged_command[@]} || exit 1
+${merge_command[@]} || exit 1
 
 #normalize coverage
 normalized_fastq=${merged_fastq%.fastq}.normalized.fastq
