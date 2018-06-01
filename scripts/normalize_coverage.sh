@@ -29,8 +29,8 @@ trim_command=(${bbmap_dir}/bbduk.sh
 ${trim_command[@]} || exit 1
 
 #merge pair
-merged_fastq=${1%_1.fastq}.merged.fastq
-unmerged_fastq=${1%_1.fastq}.unmerged.fastq
+merged_fastq=${1%.fastq}.merged.fastq
+unmerged_fastq=${1%.fastq}.unmerged.fastq
 insert_hist=${merged_fastq%.fastq}.hist.txt
 merge_command=(${bbmap_dir}/bbmerge.sh
                in1=${trimmed_fastq_1}
