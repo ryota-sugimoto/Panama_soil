@@ -40,11 +40,25 @@ merge_command=(${bbmap_dir}/bbmerge.sh
                ihist=${insert_hist})
 ${merge_command[@]} || exit 1
 
-#normalize coverage
+#normalize merged
 normalized_fastq=${merged_fastq%.fastq}.normalized.fastq
 normalize_command=(${bbmap_dir}/bbnorm.sh
+                   -Xmx110g
                    in=${merged_fastq}
                    out=${normalized_fastq}
                    target=100
                    min=5)
 ${normalize_command[@]} || exit 1
+
+#normalize pair-end 
+normalized_fastq_1=${trimmed_fastq_1%.fastq}.normalized.fastq
+normalized_fastq_2=${trimmed_fastq_2%.fastq}.normalized.fastq
+normalize_pair_end_command=(${bbmap_dir}/bbnorm.sh
+                           -Xmx110g
+                           in1=${trimmed_fastq_1}
+                           in2=${trimmed_fastq_2}
+                           out1=${normalized_fastq_1}
+                           out2=${normalized_fastq_2}
+                           target=100
+                           min=5)
+${normalize_pair_end_command[@]} || exit 1
